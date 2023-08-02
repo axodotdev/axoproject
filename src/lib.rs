@@ -264,6 +264,23 @@ pub struct PackageInfo {
     pub cargo_package_id: Option<guppy::PackageId>,
 }
 
+impl PackageInfo {
+    /// Returns a web version of the repository URL,
+    /// with .git stripped if necessary.
+    pub fn web_url(&self) -> Option<String> {
+        match self.repository_url.clone() {
+            None => None,
+            Some(url) => {
+                if let Some(chomped) = url.strip_suffix(".git") {
+                    Some(chomped.to_string())
+                } else {
+                    Some(url)
+                }
+            }
+        }
+    }
+}
+
 /// An id for a [`PackageInfo`][] entry in a [`WorkspaceInfo`][].
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct PackageIdx(pub usize);
