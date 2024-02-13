@@ -107,7 +107,7 @@ checksum = "e9959bd1b21d20e8634d0ba48621a5a988deda99bbe2a383645fc006a9feb757"
 dependencies = [
  "camino",
  "image",
- "miette",
+ "miette 5.10.0",
  "mime",
  "serde",
  "serde_json",
@@ -127,7 +127,7 @@ dependencies = [
  "backtrace",
  "backtrace-ext",
  "console",
- "miette",
+ "miette 5.10.0",
  "serde",
  "serde_json",
  "thiserror",
@@ -146,7 +146,7 @@ dependencies = [
  "console",
  "guppy",
  "itertools",
- "miette",
+ "miette 6.0.1",
  "node-semver",
  "oro-common",
  "oro-package-spec",
@@ -663,7 +663,7 @@ dependencies = [
  "backtrace",
  "backtrace-ext",
  "is-terminal",
- "miette-derive",
+ "miette-derive 5.10.0",
  "once_cell",
  "owo-colors",
  "supports-color",
@@ -676,10 +676,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "miette"
+version = "6.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "337e1043bbc086dac9d9674983bef52ac991ce150e09b5b8e35c5a73dd83f66c"
+dependencies = [
+ "miette-derive 6.0.1",
+ "thiserror",
+ "unicode-width",
+]
+
+[[package]]
 name = "miette-derive"
 version = "5.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "49e7bc1560b95a3c4a25d03de42fe76ca718ab92d1a22a55b9b4cf67b3ae635c"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.46",
+]
+
+[[package]]
+name = "miette-derive"
+version = "6.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "71e622f2a0dd84cbca79bc6c3c33f4fd7dc69faf992216516aacc1d136102800"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -720,7 +742,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "84f390c1756333538f2aed01cf280a56bc683e199b9804a504df6e7320d40116"
 dependencies = [
  "bytecount",
- "miette",
+ "miette 5.10.0",
  "nom",
  "serde",
  "thiserror",
@@ -799,7 +821,7 @@ checksum = "e22ccd785b4fa10721d57d7e3575cd059ee4ca852ae93a799810c7fc342c3692"
 dependencies = [
  "derive_builder",
  "indexmap 1.9.3",
- "miette",
+ "miette 5.10.0",
  "node-semver",
  "nom",
  "pathdiff",
@@ -817,7 +839,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d173bc0dd2ada252032b36fbbbf2ce5118562033ee6a4a2098a8c11659965cb2"
 dependencies = [
  "bytecount",
- "miette",
+ "miette 5.10.0",
  "node-semver",
  "nom",
  "percent-encoding",
